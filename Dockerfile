@@ -13,7 +13,7 @@ RUN pip install --upgrade pip
 # requirements.txt 복사 및 설치
 COPY ./requirements.txt ./
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 # 프로젝트 파일 복사
 COPY ./ ./
