@@ -1,0 +1,22 @@
+name: develop-workflow
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  SSH:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: ssh to ec2
+        uses: appleboy/ssh-action@master
+        with:
+          key: ${{ secrets.ANYASK }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          script: |
+            cd AnyAskClient 
+            git pull https://github.com/consoleolog/AnyAskClient.git
