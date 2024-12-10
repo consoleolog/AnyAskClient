@@ -1,4 +1,5 @@
 streamlit~=1.40.1
+requests
 langchain-openai~=0.2.9
 langchain-community~=0.3.7
 langchain-core~=0.3.19

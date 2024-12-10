@@ -1,9 +1,9 @@
-name: dev-workflow
+name: main-workflow
 
 on:
   push:
     branches:
-      - develop
+      - main
 
 jobs:
   SSH:
@@ -20,3 +20,4 @@ jobs:
           script: |
             cd AnyAskClient 
             git pull https://github.com/consoleolog/AnyAskClient.git
+            docker-compose up

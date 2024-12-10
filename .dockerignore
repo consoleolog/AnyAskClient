@@ -4,5 +4,7 @@
 /**/__pycache__/
 __pycache__
 .git
+/log/
+/file/
 *.log
 *.md
