@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - develop
-
 jobs:
   SSH:
     runs-on: ubuntu-20.04
