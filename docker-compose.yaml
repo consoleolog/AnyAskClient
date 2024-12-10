@@ -1,0 +1,14 @@
+services:
+  anyask:
+    image: anyask:v1
+    ports:
+      - "8501:8501"
+    command: ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.port=8501"]
+    build: .
+    develop:
+      watch:
+        - action: sync+restart
+          path: .
+          target: ./app
+    volumes:
+      - ./cache:/app/cache

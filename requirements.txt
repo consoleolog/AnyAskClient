@@ -1,2 +1,15 @@
-streamlit
-requests
+streamlit~=1.40.1
+langchain-openai~=0.2.9
+langchain-community~=0.3.7
+langchain-core~=0.3.19
+langchain-unstructured~=0.1.5
+langchain-text-splitters~=0.3.2
+langchain-postgres~=0.0.12
+langchain~=0.3.7
+langgraph~=0.2.56
+psycopg[binary, pool]~=3.2.3
+unstructured[all-docs]
+python-dotenv~=1.0.1
+pydantic~=2.9.2
+faiss-cpu
+tiktoken
