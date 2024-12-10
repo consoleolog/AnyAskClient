@@ -1,0 +1,37 @@
+name: deploy-workflow
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+jobs:
+  SSH:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: ssh to EC2 (main)
+        if: github.ref == 'refs/heads/main'
+        uses: appleboy/ssh-action@master
+        with:
+          key: ${{ secrets.ANYASK }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          script: |
+            cd AnyAskClient
+            git pull https://github.com/consoleolog/AnyAskClient.git
+            docker-compose up
+
+      - name: ssh to EC2 (develop)
+        if: github.ref == 'refs/heads/develop'
+        uses: appleboy/ssh-action@master
+        with:
+          key: ${{ secrets.ANYASK }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          script: |
+            cd AnyAskClient
+            git pull https://github.com/consoleolog/AnyAskClient.git
+            docker-compose up --watch
