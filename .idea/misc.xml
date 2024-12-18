@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="ppt-generator" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="ppt-generator" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="my-gpt" project-jdk-type="Python SDK" />
 </project>
